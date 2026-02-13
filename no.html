@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why???</title>
+
+<style>
+body {
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#fdf6e3,#e0f7fa);
+    text-align:center;
+    overflow:hidden;
+}
+
+h1 {
+    font-size:48px;
+    margin-top:60px;
+    color:#2c3e50;
+}
+
+p {
+    font-size:22px;
+    margin-top:10px;
+}
+
+ul {
+    list-style: disc inside;
+    text-align:left;
+    display:inline-block;
+    font-size:20px;
+    margin-top:20px;
+    color:#34495e;
+}
+
+ul li {
+    margin-bottom:15px;
+}
+
+/* Falling sad emojis */
+.sad-emoji {
+    position:absolute;
+    font-size:30px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% { top:-50px; opacity:1; }
+    100% { top:100vh; opacity:0; }
+}
+</style>
+</head>
+
+<body>
+<h1>Why???</h1>
+<p>You will miss out on:</p>
+
+
+<ul>
+     <li>Unlimited cuddles and holding hands 🤝</li>
+<li>Someone to Explore cafes and different places with ☕🏔️</li>
+<li>Listening and understanding each other</li>
+<li>Someone who will play your favourite song on piano 🎹🎵</li>
+<li>Someone who will make you laugh</li>
+</ul>
+<img class="no-gif" src="https://tenor.com/view/shocked-jake-peralta-andy-samberg-brooklyn-nine-nine-surprised-gif-22899574.gif" alt="Sad GIF" style="width:200px; margin:20px auto; display:block; border-radius:10px;">
+<script>
+function createSadEmoji(){
+    const emoji=document.createElement("div");
+    emoji.classList.add("sad-emoji");
+    emoji.innerHTML="😢";
+    emoji.style.left=Math.random()*100+"vw";
+    emoji.style.animationDuration=(5+Math.random()*5)+"s";
+    document.body.appendChild(emoji);
+    setTimeout(()=>emoji.remove(),10000);
+}
+setInterval(createSadEmoji,500);
+</script>
+</body>
+</html>

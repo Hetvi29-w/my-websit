@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Good Choice!</title>
+
+<style>
+body {
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#fdf6e3,#e0f7fa);
+    text-align: center;
+    overflow: hidden;
+}
+
+h1 {
+    font-size:48px;
+    margin-top:60px;
+    color:#2c3e50;
+}
+
+p {
+    font-size:24px;
+    margin-top:10px;
+}
+
+ul {
+    list-style: disc inside;
+    text-align: left;
+    display: inline-block;
+    font-size:20px;
+    margin-top:20px;
+    color:#34495e;
+}
+
+ul li {
+    margin-bottom:15px;
+}
+
+.dancing-girl {
+    width: 150px;
+    margin-top:30px;
+}
+
+/* Balloons */
+.balloon {
+    position: absolute;
+    bottom: -150px;
+    width: 60px;
+    height: 80px;
+    border-radius:50%;
+    animation: float 8s linear infinite;
+}
+
+.balloon:after {
+    content:"";
+    position:absolute;
+    width:2px;
+    height:50px;
+    background:#999;
+    left:50%;
+    top:80px;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); opacity:1; }
+    100% { transform: translateY(-120vh); opacity:0; }
+}
+</style>
+</head>
+
+<body>
+<h1>Good Choice!</h1>
+<p>Now You will get:</p>
+
+<ul>
+   <li>Unlimited cuddles and holding hands 🤝</li>
+<li>Someone to Explore cafes and different places with ☕🏔️</li>
+<li>Listening and understanding each other</li>
+<li>Someone who will play your favourite song on piano 🎹🎵</li>
+<li>Someone who will make you laugh</li>
+</ul>
+
+<img class="dancing-girl" 
+     src="https://tenor.com/view/noice-gif-18473557.gif" 
+>
+
+
+<script>
+function createBalloon(){
+    const balloon=document.createElement("div");
+    balloon.classList.add("balloon");
+    const colors=["#5dade2","#f1948a","#85c1e9","#f7dc6f"];
+    balloon.style.backgroundColor=colors[Math.floor(Math.random()*colors.length)];
+    balloon.style.left=Math.random()*100+"vw";
+    balloon.style.animationDuration=(6+Math.random()*4)+"s";
+    document.body.appendChild(balloon);
+    setTimeout(()=>balloon.remove(),10000);
+}
+setInterval(createBalloon,800);
+</script>
+</body>
+</html>
